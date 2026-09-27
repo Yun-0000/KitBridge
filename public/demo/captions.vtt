@@ -1,0 +1,64 @@
+WEBVTT
+
+00:00:00.496 --> 00:00:02.238
+A room full of donated supplies.
+
+00:00:02.435 --> 00:00:03.968
+But how many complete school kits?
+
+00:00:06.020 --> 00:00:10.048
+KitBridge turns mixed donations into a packing plan, without breaking promises.
+
+00:00:12.008 --> 00:00:13.436
+Start with the supplies you have.
+
+00:00:13.750 --> 00:00:15.735
+Then define what each grade group needs.
+
+00:00:18.450 --> 00:00:20.225
+Four kits are promised to each group.
+
+00:00:20.492 --> 00:00:22.280
+That uses all twelve notebooks.
+
+00:00:25.485 --> 00:00:27.133
+Notebooks are the bottleneck.
+
+00:00:27.714 --> 00:00:30.303
+Four more lower-grade kits need four more notebooks.
+
+00:00:30.976 --> 00:00:32.950
+One five-dollar pack contains five.
+
+00:00:33.531 --> 00:00:37.884
+The optimizer reaches twelve complete kits, then minimizes the purchase cost.
+
+00:00:39.320 --> 00:00:42.013
+Reduce the budget to four dollars and update the plan.
+
+00:00:42.594 --> 00:00:45.682
+No useful purchase fits, so spending stays at zero.
+
+00:00:47.308 --> 00:00:50.385
+With only seven backpacks, eight promised kits are impossible.
+
+00:00:50.965 --> 00:00:52.324
+KitBridge shows the shortage.
+
+00:00:52.753 --> 00:00:54.692
+It never silently lowers your commitment.
+
+00:00:56.129 --> 00:01:00.019
+Switch between what you can pack now and what to pack after supplies arrive.
+
+00:01:00.692 --> 00:01:02.585
+Each group gets item quantities.
+
+00:01:03.072 --> 00:01:06.451
+Export the plan, or print the lists for the packing table.
+
+00:01:08.141 --> 00:01:08.861
+KitBridge.
+
+00:01:09.534 --> 00:01:10.811
+Make every supply count.

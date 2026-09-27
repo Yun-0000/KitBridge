@@ -1,0 +1,41 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+.vercel
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Tests / coverage
+coverage
+.vitest
+
+# Generated Wasm copy for same-origin hosting
+public/highs.wasm
+public/highs.wasm.b64
+public/highs.wasm.b64.*
+public/highs.wasm.json
+
+# Env
+.env
+.env.*
+!.env.example
+.env*
