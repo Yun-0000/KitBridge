@@ -1,0 +1,268 @@
+WEBVTT
+
+00:00:00.480 --> 00:00:04.145
+A room full of donated supplies can still leave children without a complete school kit.
+
+00:00:04.650 --> 00:00:07.396
+A backpack without a notebook is not ready to hand out.
+
+00:00:07.900 --> 00:00:12.333
+KitBridge helps a school or community organizer answer three questions: what can we pack
+
+00:00:12.403 --> 00:00:15.493
+now, what should we buy, and which commitments can we actually meet?
+
+00:00:16.833 --> 00:00:17.873
+Here is the working planner.
+
+00:00:18.378 --> 00:00:22.679
+We have twelve backpacks, twelve notebooks, forty pencils, eight crayon boxes, and four
+
+00:00:22.729 --> 00:00:23.406
+calculators.
+
+00:00:23.780 --> 00:00:25.324
+There are sixteen kits requested.
+
+00:00:25.909 --> 00:00:27.969
+Everything starts with counts of individual items.
+
+00:00:28.241 --> 00:00:31.966
+The organizer can edit the stock directly, rename supplies, or add another item.
+
+00:00:32.552 --> 00:00:34.773
+The plan stays connected to what is actually available.
+
+00:00:36.100 --> 00:00:37.666
+Different students need different kits.
+
+00:00:37.938 --> 00:00:41.906
+An elementary kit uses one notebook, while a secondary kit needs two and a calculator.
+
+00:00:42.410 --> 00:00:45.570
+Each recipe also has a requested quantity and a minimum commitment.
+
+00:00:46.156 --> 00:00:48.316
+Here, we have promised at least four of each type.
+
+00:00:48.901 --> 00:00:52.556
+Those promises are constraints in the calculation, so one group cannot disappear just
+
+00:00:52.587 --> 00:00:53.859
+because another kit is cheaper.
+
+00:00:55.123 --> 00:00:57.395
+Run the plan and we can pack eight complete kits now.
+
+00:00:57.900 --> 00:01:02.402
+The twelve notebooks are the bottleneck: four go to elementary kits, and eight go to
+
+00:01:02.473 --> 00:01:03.392
+secondary kits.
+
+00:01:03.766 --> 00:01:05.269
+Restocking changes the result.
+
+00:01:05.774 --> 00:01:08.015
+One five dollar pack contains five notebooks.
+
+00:01:08.600 --> 00:01:12.043
+Buying that pack lets us complete twelve kits, using all twelve backpacks.
+
+00:01:12.467 --> 00:01:15.093
+The shopping list tells the organizer exactly what to purchase.
+
+00:01:16.423 --> 00:01:19.412
+Now I lower the budget to four dollars and update the plan.
+
+00:01:19.836 --> 00:01:22.360
+The five dollar notebook pack no longer fits.
+
+00:01:22.784 --> 00:01:26.378
+KitBridge returns eight kits and zero dollars spent.
+
+00:01:26.751 --> 00:01:29.527
+It does not buy supplies that fail to improve the result.
+
+00:01:30.033 --> 00:01:34.293
+Raising the budget back to ten dollars restores the twelve kit plan, while the recommended
+
+00:01:34.333 --> 00:01:36.069
+purchase still costs only five.
+
+00:01:37.390 --> 00:01:38.995
+What if the inventory count was wrong?
+
+00:01:39.581 --> 00:01:41.681
+I change the backpacks from twelve to seven.
+
+00:01:42.186 --> 00:01:46.265
+Our minimum commitments require eight backpacks, so the plan becomes infeasible.
+
+00:01:46.638 --> 00:01:49.889
+The interface shows the shortage instead of quietly reducing a promise.
+
+00:01:50.474 --> 00:01:52.958
+After correcting the stock, we can calculate again.
+
+00:01:53.463 --> 00:01:57.491
+Edits also make previous results stale, preventing an outdated packing list from being
+
+00:01:57.541 --> 00:01:58.056
+exported.
+
+00:01:59.333 --> 00:02:01.736
+The final result becomes a packing list volunteers can use.
+
+00:02:02.009 --> 00:02:06.067
+Pack now is separate from after restock, so supplies that have not arrived are not treated
+
+00:02:06.118 --> 00:02:06.744
+as available.
+
+00:02:07.248 --> 00:02:10.873
+Each view lists kit quantities, supplies to use, and leftovers.
+
+00:02:11.377 --> 00:02:13.811
+The organizer can print the list or export a spreadsheet.
+
+00:02:14.315 --> 00:02:17.940
+Drive data stays in this browser, with a downloadable backup for moving it elsewhere.
+
+00:02:19.257 --> 00:02:22.780
+Under the interface, this is a React and TypeScript application built with Vite.
+
+00:02:23.286 --> 00:02:25.587
+Input validation produces a structured scenario.
+
+00:02:25.960 --> 00:02:29.545
+A dedicated web worker runs the HiGHS optimization engine through WebAssembly.
+
+00:02:29.919 --> 00:02:34.482
+The worker keeps computation off the interface thread, and returns quantities, costs, and a
+
+00:02:34.553 --> 00:02:35.461
+solver status.
+
+00:02:36.047 --> 00:02:38.944
+There is no server round trip for calculating a plan.
+
+00:02:40.244 --> 00:02:43.615
+The model uses whole numbers for both finished kits and purchase packs.
+
+00:02:44.120 --> 00:02:48.956
+It respects stock, recipe quantities, demand, minimum commitments, and the purchase budget.
+
+00:02:49.380 --> 00:02:50.914
+The optimization has two phases.
+
+00:02:51.288 --> 00:02:53.923
+First, maximize the number of complete kits.
+
+00:02:54.428 --> 00:02:56.982
+Then hold that best total and minimize the purchase cost.
+
+00:02:57.567 --> 00:03:00.606
+This gives the five dollar recommendation even when ten dollars are available.
+
+00:03:01.911 --> 00:03:02.980
+Here is the implementation.
+
+00:03:03.486 --> 00:03:05.939
+The model builder translates a scenario into constraints.
+
+00:03:06.363 --> 00:03:10.744
+The two phase runner checks the first solver status before starting the cost optimization.
+
+00:03:11.330 --> 00:03:14.884
+Both phases must finish optimally before the result is labeled optimal.
+
+00:03:15.388 --> 00:03:19.952
+The worker client matches replies to request identifiers and handles timeouts explicitly.
+
+00:03:20.326 --> 00:03:24.051
+That separates a valid answer from a failed or outdated calculation.
+
+00:03:25.333 --> 00:03:29.392
+To check the mathematical result independently, the test suite enumerates every allowed
+
+00:03:29.422 --> 00:03:32.854
+allocation and purchase combination across ninety six cases.
+
+00:03:33.360 --> 00:03:36.287
+It compares the best kit count and cost against the solver.
+
+00:03:36.792 --> 00:03:40.397
+The cases vary stock, budget, and whether restocking is allowed.
+
+00:03:40.820 --> 00:03:44.687
+Other checks cover invalid inputs, infeasible commitments, and exports.
+
+00:03:45.111 --> 00:03:47.353
+These are repeatable checks of the behavior shown here.
+
+00:03:48.700 --> 00:03:52.537
+The current release supports three kit types, twelve supplies, and one hundred requested
+
+00:03:52.577 --> 00:03:53.415
+kits per drive.
+
+00:03:53.920 --> 00:03:58.190
+More organizers can use the static site without adding a server calculation for every plan,
+
+00:03:58.393 --> 00:04:00.058
+because each browser does its own work.
+
+00:04:00.643 --> 00:04:03.975
+Larger optimization problems are a separate engineering challenge.
+
+00:04:04.480 --> 00:04:08.811
+The next step is benchmarking bigger drives before raising those limits, followed by shared
+
+00:04:08.851 --> 00:04:09.891
+team workspaces.
+
+00:04:11.178 --> 00:04:15.175
+The first customers to test with would be schools, parent associations, and community
+
+00:04:15.236 --> 00:04:15.983
+supply drives.
+
+00:04:16.488 --> 00:04:20.577
+The proposed model keeps single drive planning free, with a paid organization tier for
+
+00:04:20.637 --> 00:04:22.494
+shared workspaces and recurring reports.
+
+00:04:23.080 --> 00:04:26.634
+A price hypothesis is ninety nine dollars per organization per year.
+
+00:04:27.220 --> 00:04:31.197
+One hundred paying organizations would mean nine thousand nine hundred dollars in annual
+
+00:04:31.247 --> 00:04:32.661
+revenue, before costs.
+
+00:04:33.247 --> 00:04:37.346
+Pilots would measure planning time saved and willingness to pay before building that tier.
+
+00:04:38.623 --> 00:04:43.146
+Today, KitBridge turns an inventory count into a purchase decision and a usable packing
+
+00:04:43.197 --> 00:04:43.570
+list.
+
+00:04:44.075 --> 00:04:48.416
+The next milestone is to test that workflow with organizers running real drives.
+
+00:04:49.001 --> 00:04:53.555
+Try the live planner, inspect the source, and follow the numbers from stock to finished
+
+00:04:53.606 --> 00:04:54.040
+kits.
+
+00:04:54.363 --> 00:04:54.948
+KitBridge.
+
+00:04:55.180 --> 00:04:56.260
+Make every supply count.
