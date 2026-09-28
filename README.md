@@ -5,9 +5,7 @@
 <p align="center">
   <a href="https://kitbridge-sigma.vercel.app"><strong>Open planner</strong></a>
   &nbsp; / &nbsp;
-  <a href="https://kitbridge-sigma.vercel.app/demo/">Watch the short film</a>
-  &nbsp; / &nbsp;
-  <a href="https://kitbridge-sigma.vercel.app/demo/luma/">5-minute walkthrough</a>
+  <a href="https://kitbridge-sigma.vercel.app/demo/">Watch the film</a>
   &nbsp; / &nbsp;
   <a href="#run-locally">Run locally</a>
 </p>
