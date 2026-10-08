@@ -50,7 +50,9 @@ Try KitBridge with a volunteer packing team and their inventory. Check whether t
 
 ## Demo video
 
-A 2-minute narrated walkthrough with on-screen captions: https://kitbridge-sigma.vercel.app/demo/ (source in `video/`, built with Remotion; narration, music and sound effects generated with ElevenLabs).
+https://youtu.be/w5kkK80ByeI
+
+A two-minute walkthrough of the real app, with captions. It is also on the site at https://kitbridge-sigma.vercel.app/demo/, and the source is in `video/`.
 
 ## Built with
 

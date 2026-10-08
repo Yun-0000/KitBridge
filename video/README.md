@@ -6,7 +6,7 @@ The published cut lives at `public/demo/kitbridge-demo.mp4`.
 | Path | What it is |
 | :--- | :--- |
 | `src/narration.json` | The script, one entry per spoken line, grouped by scene. |
-| `src/timeline.json` | Line lengths and word start times from the generated voice. Scene timing and the word-by-word captions follow from it. |
+| `src/timeline.json` | Line lengths and word start times from the recorded voice. Scene timing and the word-by-word captions follow from it. |
 | `src/scenes.tsx` | The nine scenes. Camera moves, clicks and highlights are tied to narration lines. |
 | `src/boxes.json` | Element positions in the app, recorded while capturing the screenshots. |
 | `public/shots/` | Screenshots of the real app (1440 × 900 at 2×; phone at 3×). |
@@ -45,7 +45,7 @@ ELEVENLABS_API_KEY=... python scripts/voice.py   # rewrites public/vo and src/ti
 
 The music bed (`public/music/bed.mp3`) and the sounds in `public/sfx/` were made
 with the ElevenLabs Music and Sound Effects APIs. If the film gets much longer,
-generate a new bed of matching length. The key is read from the environment
+make a new bed of matching length. The key is read from the environment
 and is not stored in the repository.
 
 Scene lengths follow the new line lengths. Screens are fixed screenshots, so if
