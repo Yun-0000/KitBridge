@@ -280,14 +280,16 @@ export function Phone({ src, scrollFrom, scrollTo, from, to }: {
 
 /* ---------- Captions ---------- */
 
-export function Caption({ words, spoken, opacity }: { words: string[]; spoken: number; opacity: number }) {
+export function Caption({ words, spoken, opacity, dark }: { words: string[]; spoken: number; opacity: number; dark: boolean }) {
+  const ink = dark ? "#fff" : C.ink;
+  const halo = dark ? "rgba(20,20,20,0.9)" : "rgba(250,250,247,0.95)";
   return (
     <div
       style={{
         position: "absolute",
         left: 0,
         right: 0,
-        bottom: 22,
+        bottom: 26,
         display: "flex",
         justifyContent: "center",
         opacity,
@@ -296,20 +298,17 @@ export function Caption({ words, spoken, opacity }: { words: string[]; spoken: n
     >
       <div
         style={{
-          maxWidth: 1720,
-          padding: "10px 24px",
-          borderRadius: 14,
-          background: "rgba(20,20,20,0.86)",
-          color: "#fff",
+          maxWidth: 1640,
           fontFamily: SANS,
-          fontWeight: 500,
-          fontSize: 32,
-          lineHeight: 1.28,
+          fontWeight: 600,
+          fontSize: 34,
+          lineHeight: 1.3,
           textAlign: "center",
+          textShadow: `0 0 6px ${halo}, 0 0 14px ${halo}, 0 0 24px ${halo}`,
         }}
       >
         {words.map((w, i) => (
-          <span key={i} style={{ color: i < spoken ? "#fff" : "rgba(255,255,255,0.5)" }}>
+          <span key={i} style={{ color: ink, opacity: i < spoken ? 1 : 0.45 }}>
             {i ? " " : ""}
             {w}
           </span>

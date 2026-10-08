@@ -76,6 +76,8 @@ function musicVolume(frame: number) {
   return duck * fade;
 }
 
+const DARK: SceneId[] = ["hook", "phone"];
+
 function Captions() {
   const frame = useCurrentFrame();
   const current = lines.find((l) => frame >= l.from - 3 && frame < l.from + l.dur + 6);
@@ -87,7 +89,9 @@ function Captions() {
     { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
   );
   const spoken = current.words.filter((w) => frame >= current.from + w.t * FPS - 2).length;
-  return <Caption words={current.words.map((w) => w.w)} spoken={spoken} opacity={opacity} />;
+  // Dark scenes get white text; the last line plays after the close flips to ink.
+  const dark = DARK.includes(current.scene) || current.id === "L18";
+  return <Caption words={current.words.map((w) => w.w)} spoken={spoken} opacity={opacity} dark={dark} />;
 }
 
 export function Demo() {

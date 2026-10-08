@@ -36,17 +36,14 @@ node scripts/captions.mjs   # rewrites ../public/demo/captions.vtt
 
 ## Changing the script
 
-The voice is ElevenLabs "Chris" (`eleven_multilingual_v2`, speed 1.1). Edit
-`src/narration.json`, then:
+Edit `src/narration.json`, then:
 
 ```sh
-ELEVENLABS_API_KEY=... python scripts/voice.py   # rewrites public/vo and src/timeline.json
+python scripts/voice.py   # rewrites public/vo and src/timeline.json
 ```
 
-The music bed (`public/music/bed.mp3`) and the sounds in `public/sfx/` were made
-with the ElevenLabs Music and Sound Effects APIs. If the film gets much longer,
-make a new bed of matching length. The key is read from the environment
-and is not stored in the repository.
+The voice API key is read from the environment and is not stored in the
+repository. If the film gets much longer, make a new music bed of matching length.
 
 Scene lengths follow the new line lengths. Screens are fixed screenshots, so if
 the interface changes, run the app and recapture them with
