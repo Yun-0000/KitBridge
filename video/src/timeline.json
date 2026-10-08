@@ -1308,6 +1308,106 @@
   ]
  },
  {
+  "scene": "how",
+  "id": "L19",
+  "text": "Most tools stop at a total. KitBridge keeps every promise to each group, and only spends money when it actually finishes a kit.",
+  "seconds": 7.118,
+  "words": [
+   {
+    "w": "Most",
+    "t": 0.0
+   },
+   {
+    "w": "tools",
+    "t": 0.325
+   },
+   {
+    "w": "stop",
+    "t": 0.615
+   },
+   {
+    "w": "at",
+    "t": 0.952
+   },
+   {
+    "w": "a",
+    "t": 1.057
+   },
+   {
+    "w": "total.",
+    "t": 1.149
+   },
+   {
+    "w": "KitBridge",
+    "t": 2.09
+   },
+   {
+    "w": "keeps",
+    "t": 2.601
+   },
+   {
+    "w": "every",
+    "t": 2.926
+   },
+   {
+    "w": "promise",
+    "t": 3.274
+   },
+   {
+    "w": "to",
+    "t": 3.646
+   },
+   {
+    "w": "each",
+    "t": 3.75
+   },
+   {
+    "w": "group,",
+    "t": 3.959
+   },
+   {
+    "w": "and",
+    "t": 4.621
+   },
+   {
+    "w": "only",
+    "t": 4.818
+   },
+   {
+    "w": "spends",
+    "t": 5.016
+   },
+   {
+    "w": "money",
+    "t": 5.329
+   },
+   {
+    "w": "when",
+    "t": 5.561
+   },
+   {
+    "w": "it",
+    "t": 5.747
+   },
+   {
+    "w": "actually",
+    "t": 5.863
+   },
+   {
+    "w": "finishes",
+    "t": 6.235
+   },
+   {
+    "w": "a",
+    "t": 6.699
+   },
+   {
+    "w": "kit.",
+    "t": 6.78
+   }
+  ]
+ },
+ {
   "scene": "close",
   "id": "L17",
   "text": "Equal access to education starts with a complete kit.",

@@ -1,13 +1,15 @@
 """Generate the narration with ElevenLabs, with word timings for the captions.
 
 Usage: ELEVENLABS_API_KEY=... python scripts/voice.py
-Writes public/vo/<id>.mp3 for every line in src/narration.json and
-src/timeline.json with each line's duration and word start times.
+Writes public/vo/<id>.mp3 for every new or changed line in src/narration.json,
+and src/timeline.json with each line's duration and word start times.
+Unchanged lines keep their recording; pass --all to record every line again.
 """
 import base64
 import json
 import os
 import subprocess
+import sys
 import urllib.request
 from pathlib import Path
 
@@ -53,8 +55,13 @@ def words(text, starts):
 
 
 lines = json.loads((ROOT / "src/narration.json").read_text())
+old = {l["id"]: l for l in json.loads((ROOT / "src/timeline.json").read_text())}
 out = []
 for n, line in enumerate(lines):
+    kept = old.get(line["id"])
+    if "--all" not in sys.argv and kept and kept["text"] == line["text"] and kept["scene"] == line["scene"]:
+        out.append(kept)
+        continue
     prev = lines[n - 1]["text"] if n else ""
     nxt = lines[n + 1]["text"] if n + 1 < len(lines) else ""
     res = tts(line["text"], prev, nxt)

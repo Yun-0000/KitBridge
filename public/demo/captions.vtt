@@ -6,50 +6,53 @@ A school supply drive can have plenty of donations, and still run short of compl
 00:00:05.600 --> 00:00:12.233
 One group needs crayons. Another needs calculators. Both need notebooks. And some kits were promised weeks ago.
 
-00:00:13.200 --> 00:00:20.400
+00:00:13.500 --> 00:00:20.700
 KitBridge answers two questions for the volunteers who pack them. How many complete kits can we make right now? And what should we buy next?
 
-00:00:21.366 --> 00:00:27.833
+00:00:21.966 --> 00:00:28.433
 Everything lives on one drive sheet: what's on hand, what goes into each kit, and what a restock pack costs.
 
-00:00:28.300 --> 00:00:34.766
+00:00:28.900 --> 00:00:35.366
 The answer sits on top. Stock on hand packs eight kits. With a ten dollar budget, it's twelve of sixteen.
 
-00:00:35.233 --> 00:00:42.133
+00:00:35.833 --> 00:00:42.733
 And it explains why. Notebooks and calculators run out first, and one five dollar pack of notebooks adds four kits.
 
-00:00:43.100 --> 00:00:48.100
+00:00:44.000 --> 00:00:49.000
 Change any number, and the plan updates as you type. Let's drop the budget to four dollars.
 
-00:00:48.566 --> 00:00:54.666
+00:00:49.466 --> 00:00:55.566
 A calculator would fit that budget, but it wouldn't finish a single extra kit. So KitBridge spends nothing.
 
-00:00:55.633 --> 00:01:00.366
+00:00:56.833 --> 00:01:01.566
 Promises are hard limits. With only seven backpacks, eight promised kits can't be packed.
 
-00:01:00.833 --> 00:01:04.266
+00:01:02.033 --> 00:01:05.466
 KitBridge names the shortage, instead of quietly breaking a promise.
 
-00:01:05.233 --> 00:01:10.566
+00:01:06.733 --> 00:01:12.066
 When the plan looks right, open the packing sheets. Pack now from stock, or after the restock arrives.
 
-00:01:11.033 --> 00:01:15.366
+00:01:12.533 --> 00:01:16.866
 Each kit type gets a checklist with exact totals, ready to print for the packing table.
 
-00:01:16.333 --> 00:01:19.266
+00:01:18.133 --> 00:01:21.066
 It works on a phone too, so the count can happen right in the stockroom.
 
-00:01:21.033 --> 00:01:28.266
+00:01:23.033 --> 00:01:30.266
 Under the hood, KitBridge solves a two step integer program with the HiGHS solver, compiled to WebAssembly and running in a web worker.
 
-00:01:28.733 --> 00:01:36.266
+00:01:30.733 --> 00:01:38.266
 Step one finds the most complete kits within stock, budget and promises. Step two finds the cheapest purchase that reaches that total.
 
-00:01:36.733 --> 00:01:44.633
+00:01:38.733 --> 00:01:46.633
 Money is counted in whole cents, the solver is checked against brute force on ninety six small drives, and nothing ever leaves your device.
 
-00:01:45.600 --> 00:01:48.300
+00:01:47.100 --> 00:01:54.233
+Most tools stop at a total. KitBridge keeps every promise to each group, and only spends money when it actually finishes a kit.
+
+00:01:55.500 --> 00:01:58.200
 Equal access to education starts with a complete kit.
 
-00:01:48.766 --> 00:01:52.066
+00:01:58.666 --> 00:02:01.966
 KitBridge. From donated supplies, to complete kits.

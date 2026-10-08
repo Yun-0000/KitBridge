@@ -60,7 +60,7 @@ function SceneFade({ dur, last, children }: { dur: number; last: boolean; childr
 }
 
 /** The music starts late enough that its own ending lands on the last frame. */
-const MUSIC_AT = 50;
+const MUSIC_AT = 66;
 
 /** The music sits higher in pauses and dips under the voice. */
 function musicVolume(frame: number) {
@@ -68,7 +68,7 @@ function musicVolume(frame: number) {
   const gap = Math.min(
     ...lines.map((l) => Math.max(0, l.from - 4 - frame, frame - (l.from + l.dur))),
   );
-  const duck = interpolate(gap, [0, 14], [0.13, 0.4], clamp);
+  const duck = interpolate(gap, [0, 14], [0.09, 0.27], clamp);
   const fade = Math.min(
     interpolate(frame, [MUSIC_AT, MUSIC_AT + 20], [0, 1], clamp),
     interpolate(frame, [TOTAL_FRAMES - 10, TOTAL_FRAMES], [1, 0], clamp),

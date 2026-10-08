@@ -423,6 +423,24 @@ export function How() {
             </div>
           ))}
         </div>
+        <div
+          style={{
+            ...rise(frame, at("L19", 0.3), 20),
+            display: "inline-flex",
+            gap: 14,
+            marginTop: 40,
+            padding: "20px 30px",
+            borderRadius: 18,
+            background: C.ink,
+            fontFamily: SANS,
+            fontSize: 30,
+            fontWeight: 600,
+            color: "#fff",
+          }}
+        >
+          Keeps every promise.
+          <span style={{ color: C.yellow }}>Spends only when it finishes a kit.</span>
+        </div>
       </div>
     </Stage>
   );

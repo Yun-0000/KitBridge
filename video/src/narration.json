@@ -15,6 +15,7 @@
   { "scene": "how", "id": "L14", "text": "Under the hood, KitBridge solves a two step integer program with the HiGHS solver, compiled to WebAssembly and running in a web worker." },
   { "scene": "how", "id": "L15", "text": "Step one finds the most complete kits within stock, budget and promises. Step two finds the cheapest purchase that reaches that total." },
   { "scene": "how", "id": "L16", "text": "Money is counted in whole cents, the solver is checked against brute force on ninety six small drives, and nothing ever leaves your device." },
+  { "scene": "how", "id": "L19", "text": "Most tools stop at a total. KitBridge keeps every promise to each group, and only spends money when it actually finishes a kit." },
   { "scene": "close", "id": "L17", "text": "Equal access to education starts with a complete kit." },
   { "scene": "close", "id": "L18", "text": "KitBridge. From donated supplies, to complete kits." }
 ]

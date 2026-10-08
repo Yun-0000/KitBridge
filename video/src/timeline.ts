@@ -30,8 +30,8 @@ const ORDER: SceneId[] = [
 /** Seconds of silence before the first line, between lines and after the last. */
 const LEAD = 0.5;
 const GAP = 0.45;
-const TAIL: Partial<Record<SceneId, number>> = { phone: 1.6, close: 3.2 };
-const DEFAULT_TAIL = 0.8;
+const TAIL: Partial<Record<SceneId, number>> = { phone: 1.8, close: 4 };
+const DEFAULT_TAIL = 1.1;
 /** Frames each scene crossfades over the end of the previous one. */
 export const XFADE = 10;
 
