@@ -1,0 +1,20 @@
+[
+  { "scene": "hook", "id": "L01", "text": "A school supply drive can have plenty of donations, and still run short of complete kits." },
+  { "scene": "hook", "id": "L02", "text": "One group needs crayons. Another needs calculators. Both need notebooks. And some kits were promised weeks ago." },
+  { "scene": "intro", "id": "L03", "text": "KitBridge answers two questions for the volunteers who pack them. How many complete kits can we make right now? And what should we buy next?" },
+  { "scene": "plan", "id": "L04", "text": "Everything lives on one drive sheet: what's on hand, what goes into each kit, and what a restock pack costs." },
+  { "scene": "plan", "id": "L05", "text": "The answer sits on top. Stock on hand packs eight kits. With a ten dollar budget, it's twelve of sixteen." },
+  { "scene": "plan", "id": "L06", "text": "And it explains why. Notebooks and calculators run out first, and one five dollar pack of notebooks adds four kits." },
+  { "scene": "budget", "id": "L07", "text": "Change any number, and the plan updates as you type. Let's drop the budget to four dollars." },
+  { "scene": "budget", "id": "L08", "text": "A calculator would fit that budget, but it wouldn't finish a single extra kit. So KitBridge spends nothing." },
+  { "scene": "promise", "id": "L09", "text": "Promises are hard limits. With only seven backpacks, eight promised kits can't be packed." },
+  { "scene": "promise", "id": "L10", "text": "KitBridge names the shortage, instead of quietly breaking a promise." },
+  { "scene": "packing", "id": "L11", "text": "When the plan looks right, open the packing sheets. Pack now from stock, or after the restock arrives." },
+  { "scene": "packing", "id": "L12", "text": "Each kit type gets a checklist with exact totals, ready to print for the packing table." },
+  { "scene": "phone", "id": "L13", "text": "It works on a phone too, so the count can happen right in the stockroom." },
+  { "scene": "how", "id": "L14", "text": "Under the hood, KitBridge solves a two step integer program with the HiGHS solver, compiled to WebAssembly and running in a web worker." },
+  { "scene": "how", "id": "L15", "text": "Step one finds the most complete kits within stock, budget and promises. Step two finds the cheapest purchase that reaches that total." },
+  { "scene": "how", "id": "L16", "text": "Money is counted in whole cents, the solver is checked against brute force on ninety six small drives, and nothing ever leaves your device." },
+  { "scene": "close", "id": "L17", "text": "Equal access to education starts with a complete kit." },
+  { "scene": "close", "id": "L18", "text": "KitBridge. From donated supplies, to complete kits." }
+]

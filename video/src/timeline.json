@@ -1,0 +1,1390 @@
+[
+ {
+  "scene": "hook",
+  "id": "L01",
+  "text": "A school supply drive can have plenty of donations, and still run short of complete kits.",
+  "seconds": 4.622,
+  "words": [
+   {
+    "w": "A",
+    "t": 0.0
+   },
+   {
+    "w": "school",
+    "t": 0.139
+   },
+   {
+    "w": "supply",
+    "t": 0.418
+   },
+   {
+    "w": "drive",
+    "t": 0.731
+   },
+   {
+    "w": "can",
+    "t": 1.01
+   },
+   {
+    "w": "have",
+    "t": 1.161
+   },
+   {
+    "w": "plenty",
+    "t": 1.347
+   },
+   {
+    "w": "of",
+    "t": 1.649
+   },
+   {
+    "w": "donations,",
+    "t": 1.753
+   },
+   {
+    "w": "and",
+    "t": 2.601
+   },
+   {
+    "w": "still",
+    "t": 2.786
+   },
+   {
+    "w": "run",
+    "t": 3.042
+   },
+   {
+    "w": "short",
+    "t": 3.239
+   },
+   {
+    "w": "of",
+    "t": 3.495
+   },
+   {
+    "w": "complete",
+    "t": 3.657
+   },
+   {
+    "w": "kits.",
+    "t": 4.087
+   }
+  ]
+ },
+ {
+  "scene": "hook",
+  "id": "L02",
+  "text": "One group needs crayons. Another needs calculators. Both need notebooks. And some kits were promised weeks ago.",
+  "seconds": 6.63,
+  "words": [
+   {
+    "w": "One",
+    "t": 0.0
+   },
+   {
+    "w": "group",
+    "t": 0.221
+   },
+   {
+    "w": "needs",
+    "t": 0.418
+   },
+   {
+    "w": "crayons.",
+    "t": 0.639
+   },
+   {
+    "w": "Another",
+    "t": 1.3
+   },
+   {
+    "w": "needs",
+    "t": 1.672
+   },
+   {
+    "w": "calculators.",
+    "t": 1.916
+   },
+   {
+    "w": "Both",
+    "t": 2.949
+   },
+   {
+    "w": "need",
+    "t": 3.228
+   },
+   {
+    "w": "notebooks.",
+    "t": 3.448
+   },
+   {
+    "w": "And",
+    "t": 4.389
+   },
+   {
+    "w": "some",
+    "t": 4.586
+   },
+   {
+    "w": "kits",
+    "t": 4.818
+   },
+   {
+    "w": "were",
+    "t": 5.027
+   },
+   {
+    "w": "promised",
+    "t": 5.166
+   },
+   {
+    "w": "weeks",
+    "t": 5.886
+   },
+   {
+    "w": "ago.",
+    "t": 6.223
+   }
+  ]
+ },
+ {
+  "scene": "intro",
+  "id": "L03",
+  "text": "KitBridge answers two questions for the volunteers who pack them. How many complete kits can we make right now? And what should we buy next?",
+  "seconds": 7.189,
+  "words": [
+   {
+    "w": "KitBridge",
+    "t": 0.0
+   },
+   {
+    "w": "answers",
+    "t": 0.453
+   },
+   {
+    "w": "two",
+    "t": 0.848
+   },
+   {
+    "w": "questions",
+    "t": 1.057
+   },
+   {
+    "w": "for",
+    "t": 1.533
+   },
+   {
+    "w": "the",
+    "t": 1.672
+   },
+   {
+    "w": "volunteers",
+    "t": 1.776
+   },
+   {
+    "w": "who",
+    "t": 2.229
+   },
+   {
+    "w": "pack",
+    "t": 2.38
+   },
+   {
+    "w": "them.",
+    "t": 2.647
+   },
+   {
+    "w": "How",
+    "t": 3.448
+   },
+   {
+    "w": "many",
+    "t": 3.611
+   },
+   {
+    "w": "complete",
+    "t": 3.808
+   },
+   {
+    "w": "kits",
+    "t": 4.226
+   },
+   {
+    "w": "can",
+    "t": 4.505
+   },
+   {
+    "w": "we",
+    "t": 4.656
+   },
+   {
+    "w": "make",
+    "t": 4.772
+   },
+   {
+    "w": "right",
+    "t": 4.969
+   },
+   {
+    "w": "now?",
+    "t": 5.178
+   },
+   {
+    "w": "And",
+    "t": 5.712
+   },
+   {
+    "w": "what",
+    "t": 5.909
+   },
+   {
+    "w": "should",
+    "t": 6.084
+   },
+   {
+    "w": "we",
+    "t": 6.281
+   },
+   {
+    "w": "buy",
+    "t": 6.42
+   },
+   {
+    "w": "next?",
+    "t": 6.676
+   }
+  ]
+ },
+ {
+  "scene": "plan",
+  "id": "L04",
+  "text": "Everything lives on one drive sheet: what's on hand, what goes into each kit, and what a restock pack costs.",
+  "seconds": 6.455,
+  "words": [
+   {
+    "w": "Everything",
+    "t": 0.0
+   },
+   {
+    "w": "lives",
+    "t": 0.476
+   },
+   {
+    "w": "on",
+    "t": 0.708
+   },
+   {
+    "w": "one",
+    "t": 0.882
+   },
+   {
+    "w": "drive",
+    "t": 1.091
+   },
+   {
+    "w": "sheet:",
+    "t": 1.358
+   },
+   {
+    "w": "what's",
+    "t": 2.078
+   },
+   {
+    "w": "on",
+    "t": 2.357
+   },
+   {
+    "w": "hand,",
+    "t": 2.508
+   },
+   {
+    "w": "what",
+    "t": 3.111
+   },
+   {
+    "w": "goes",
+    "t": 3.32
+   },
+   {
+    "w": "into",
+    "t": 3.529
+   },
+   {
+    "w": "each",
+    "t": 3.75
+   },
+   {
+    "w": "kit,",
+    "t": 3.971
+   },
+   {
+    "w": "and",
+    "t": 4.714
+   },
+   {
+    "w": "what",
+    "t": 4.865
+   },
+   {
+    "w": "a",
+    "t": 5.016
+   },
+   {
+    "w": "restock",
+    "t": 5.108
+   },
+   {
+    "w": "pack",
+    "t": 5.608
+   },
+   {
+    "w": "costs.",
+    "t": 5.863
+   }
+  ]
+ },
+ {
+  "scene": "plan",
+  "id": "L05",
+  "text": "The answer sits on top. Stock on hand packs eight kits. With a ten dollar budget, it's twelve of sixteen.",
+  "seconds": 6.472,
+  "words": [
+   {
+    "w": "The",
+    "t": 0.0
+   },
+   {
+    "w": "answer",
+    "t": 0.197
+   },
+   {
+    "w": "sits",
+    "t": 0.476
+   },
+   {
+    "w": "on",
+    "t": 0.708
+   },
+   {
+    "w": "top.",
+    "t": 0.836
+   },
+   {
+    "w": "Stock",
+    "t": 1.834
+   },
+   {
+    "w": "on",
+    "t": 2.183
+   },
+   {
+    "w": "hand",
+    "t": 2.31
+   },
+   {
+    "w": "packs",
+    "t": 2.519
+   },
+   {
+    "w": "eight",
+    "t": 2.914
+   },
+   {
+    "w": "kits.",
+    "t": 3.181
+   },
+   {
+    "w": "With",
+    "t": 4.098
+   },
+   {
+    "w": "a",
+    "t": 4.284
+   },
+   {
+    "w": "ten",
+    "t": 4.342
+   },
+   {
+    "w": "dollar",
+    "t": 4.493
+   },
+   {
+    "w": "budget,",
+    "t": 4.725
+   },
+   {
+    "w": "it's",
+    "t": 5.19
+   },
+   {
+    "w": "twelve",
+    "t": 5.422
+   },
+   {
+    "w": "of",
+    "t": 5.747
+   },
+   {
+    "w": "sixteen.",
+    "t": 5.863
+   }
+  ]
+ },
+ {
+  "scene": "plan",
+  "id": "L06",
+  "text": "And it explains why. Notebooks and calculators run out first, and one five dollar pack of notebooks adds four kits.",
+  "seconds": 6.901,
+  "words": [
+   {
+    "w": "And",
+    "t": 0.0
+   },
+   {
+    "w": "it",
+    "t": 0.221
+   },
+   {
+    "w": "explains",
+    "t": 0.325
+   },
+   {
+    "w": "why.",
+    "t": 0.743
+   },
+   {
+    "w": "Notebooks",
+    "t": 1.66
+   },
+   {
+    "w": "and",
+    "t": 2.159
+   },
+   {
+    "w": "calculators",
+    "t": 2.368
+   },
+   {
+    "w": "run",
+    "t": 3.007
+   },
+   {
+    "w": "out",
+    "t": 3.204
+   },
+   {
+    "w": "first,",
+    "t": 3.379
+   },
+   {
+    "w": "and",
+    "t": 4.029
+   },
+   {
+    "w": "one",
+    "t": 4.238
+   },
+   {
+    "w": "five",
+    "t": 4.423
+   },
+   {
+    "w": "dollar",
+    "t": 4.644
+   },
+   {
+    "w": "pack",
+    "t": 4.899
+   },
+   {
+    "w": "of",
+    "t": 5.12
+   },
+   {
+    "w": "notebooks",
+    "t": 5.224
+   },
+   {
+    "w": "adds",
+    "t": 5.805
+   },
+   {
+    "w": "four",
+    "t": 6.153
+   },
+   {
+    "w": "kits.",
+    "t": 6.409
+   }
+  ]
+ },
+ {
+  "scene": "budget",
+  "id": "L07",
+  "text": "Change any number, and the plan updates as you type. Let's drop the budget to four dollars.",
+  "seconds": 5.002,
+  "words": [
+   {
+    "w": "Change",
+    "t": 0.0
+   },
+   {
+    "w": "any",
+    "t": 0.372
+   },
+   {
+    "w": "number,",
+    "t": 0.569
+   },
+   {
+    "w": "and",
+    "t": 1.149
+   },
+   {
+    "w": "the",
+    "t": 1.335
+   },
+   {
+    "w": "plan",
+    "t": 1.44
+   },
+   {
+    "w": "updates",
+    "t": 1.73
+   },
+   {
+    "w": "as",
+    "t": 2.101
+   },
+   {
+    "w": "you",
+    "t": 2.229
+   },
+   {
+    "w": "type.",
+    "t": 2.357
+   },
+   {
+    "w": "Let's",
+    "t": 3.193
+   },
+   {
+    "w": "drop",
+    "t": 3.437
+   },
+   {
+    "w": "the",
+    "t": 3.669
+   },
+   {
+    "w": "budget",
+    "t": 3.773
+   },
+   {
+    "w": "to",
+    "t": 4.075
+   },
+   {
+    "w": "four",
+    "t": 4.203
+   },
+   {
+    "w": "dollars.",
+    "t": 4.447
+   }
+  ]
+ },
+ {
+  "scene": "budget",
+  "id": "L08",
+  "text": "A calculator would fit that budget, but it wouldn't finish a single extra kit. So KitBridge spends nothing.",
+  "seconds": 6.093,
+  "words": [
+   {
+    "w": "A",
+    "t": 0.0
+   },
+   {
+    "w": "calculator",
+    "t": 0.163
+   },
+   {
+    "w": "would",
+    "t": 0.662
+   },
+   {
+    "w": "fit",
+    "t": 0.848
+   },
+   {
+    "w": "that",
+    "t": 1.01
+   },
+   {
+    "w": "budget,",
+    "t": 1.184
+   },
+   {
+    "w": "but",
+    "t": 1.962
+   },
+   {
+    "w": "it",
+    "t": 2.101
+   },
+   {
+    "w": "wouldn't",
+    "t": 2.171
+   },
+   {
+    "w": "finish",
+    "t": 2.403
+   },
+   {
+    "w": "a",
+    "t": 2.67
+   },
+   {
+    "w": "single",
+    "t": 2.763
+   },
+   {
+    "w": "extra",
+    "t": 3.111
+   },
+   {
+    "w": "kit.",
+    "t": 3.402
+   },
+   {
+    "w": "So",
+    "t": 4.528
+   },
+   {
+    "w": "KitBridge",
+    "t": 4.783
+   },
+   {
+    "w": "spends",
+    "t": 5.248
+   },
+   {
+    "w": "nothing.",
+    "t": 5.619
+   }
+  ]
+ },
+ {
+  "scene": "promise",
+  "id": "L09",
+  "text": "Promises are hard limits. With only seven backpacks, eight promised kits can't be packed.",
+  "seconds": 4.718,
+  "words": [
+   {
+    "w": "Promises",
+    "t": 0.0
+   },
+   {
+    "w": "are",
+    "t": 0.511
+   },
+   {
+    "w": "hard",
+    "t": 0.639
+   },
+   {
+    "w": "limits.",
+    "t": 0.894
+   },
+   {
+    "w": "With",
+    "t": 1.672
+   },
+   {
+    "w": "only",
+    "t": 1.858
+   },
+   {
+    "w": "seven",
+    "t": 2.055
+   },
+   {
+    "w": "backpacks,",
+    "t": 2.31
+   },
+   {
+    "w": "eight",
+    "t": 3.053
+   },
+   {
+    "w": "promised",
+    "t": 3.274
+   },
+   {
+    "w": "kits",
+    "t": 3.68
+   },
+   {
+    "w": "can't",
+    "t": 3.982
+   },
+   {
+    "w": "be",
+    "t": 4.18
+   },
+   {
+    "w": "packed.",
+    "t": 4.296
+   }
+  ]
+ },
+ {
+  "scene": "promise",
+  "id": "L10",
+  "text": "KitBridge names the shortage, instead of quietly breaking a promise.",
+  "seconds": 3.433,
+  "words": [
+   {
+    "w": "KitBridge",
+    "t": 0.0
+   },
+   {
+    "w": "names",
+    "t": 0.511
+   },
+   {
+    "w": "the",
+    "t": 0.813
+   },
+   {
+    "w": "shortage,",
+    "t": 0.929
+   },
+   {
+    "w": "instead",
+    "t": 1.602
+   },
+   {
+    "w": "of",
+    "t": 1.916
+   },
+   {
+    "w": "quietly",
+    "t": 2.032
+   },
+   {
+    "w": "breaking",
+    "t": 2.415
+   },
+   {
+    "w": "a",
+    "t": 2.81
+   },
+   {
+    "w": "promise.",
+    "t": 2.879
+   }
+  ]
+ },
+ {
+  "scene": "packing",
+  "id": "L11",
+  "text": "When the plan looks right, open the packing sheets. Pack now from stock, or after the restock arrives.",
+  "seconds": 5.322,
+  "words": [
+   {
+    "w": "When",
+    "t": 0.0
+   },
+   {
+    "w": "the",
+    "t": 0.232
+   },
+   {
+    "w": "plan",
+    "t": 0.325
+   },
+   {
+    "w": "looks",
+    "t": 0.557
+   },
+   {
+    "w": "right,",
+    "t": 0.778
+   },
+   {
+    "w": "open",
+    "t": 1.045
+   },
+   {
+    "w": "the",
+    "t": 1.312
+   },
+   {
+    "w": "packing",
+    "t": 1.416
+   },
+   {
+    "w": "sheets.",
+    "t": 1.788
+   },
+   {
+    "w": "Pack",
+    "t": 2.485
+   },
+   {
+    "w": "now",
+    "t": 2.752
+   },
+   {
+    "w": "from",
+    "t": 2.937
+   },
+   {
+    "w": "stock,",
+    "t": 3.135
+   },
+   {
+    "w": "or",
+    "t": 3.553
+   },
+   {
+    "w": "after",
+    "t": 3.936
+   },
+   {
+    "w": "the",
+    "t": 4.249
+   },
+   {
+    "w": "restock",
+    "t": 4.354
+   },
+   {
+    "w": "arrives.",
+    "t": 4.76
+   }
+  ]
+ },
+ {
+  "scene": "packing",
+  "id": "L12",
+  "text": "Each kit type gets a checklist with exact totals, ready to print for the packing table.",
+  "seconds": 4.337,
+  "words": [
+   {
+    "w": "Each",
+    "t": 0.0
+   },
+   {
+    "w": "kit",
+    "t": 0.255
+   },
+   {
+    "w": "type",
+    "t": 0.453
+   },
+   {
+    "w": "gets",
+    "t": 0.662
+   },
+   {
+    "w": "a",
+    "t": 0.848
+   },
+   {
+    "w": "checklist",
+    "t": 0.917
+   },
+   {
+    "w": "with",
+    "t": 1.358
+   },
+   {
+    "w": "exact",
+    "t": 1.556
+   },
+   {
+    "w": "totals,",
+    "t": 1.974
+   },
+   {
+    "w": "ready",
+    "t": 2.902
+   },
+   {
+    "w": "to",
+    "t": 3.135
+   },
+   {
+    "w": "print",
+    "t": 3.228
+   },
+   {
+    "w": "for",
+    "t": 3.425
+   },
+   {
+    "w": "the",
+    "t": 3.529
+   },
+   {
+    "w": "packing",
+    "t": 3.634
+   },
+   {
+    "w": "table.",
+    "t": 3.982
+   }
+  ]
+ },
+ {
+  "scene": "phone",
+  "id": "L13",
+  "text": "It works on a phone too, so the count can happen right in the stockroom.",
+  "seconds": 2.942,
+  "words": [
+   {
+    "w": "It",
+    "t": 0.0
+   },
+   {
+    "w": "works",
+    "t": 0.163
+   },
+   {
+    "w": "on",
+    "t": 0.372
+   },
+   {
+    "w": "a",
+    "t": 0.464
+   },
+   {
+    "w": "phone",
+    "t": 0.534
+   },
+   {
+    "w": "too,",
+    "t": 0.813
+   },
+   {
+    "w": "so",
+    "t": 1.045
+   },
+   {
+    "w": "the",
+    "t": 1.207
+   },
+   {
+    "w": "count",
+    "t": 1.335
+   },
+   {
+    "w": "can",
+    "t": 1.579
+   },
+   {
+    "w": "happen",
+    "t": 1.73
+   },
+   {
+    "w": "right",
+    "t": 2.043
+   },
+   {
+    "w": "in",
+    "t": 2.206
+   },
+   {
+    "w": "the",
+    "t": 2.287
+   },
+   {
+    "w": "stockroom.",
+    "t": 2.38
+   }
+  ]
+ },
+ {
+  "scene": "how",
+  "id": "L14",
+  "text": "Under the hood, KitBridge solves a two step integer program with the HiGHS solver, compiled to WebAssembly and running in a web worker.",
+  "seconds": 7.218,
+  "words": [
+   {
+    "w": "Under",
+    "t": 0.0
+   },
+   {
+    "w": "the",
+    "t": 0.29
+   },
+   {
+    "w": "hood,",
+    "t": 0.395
+   },
+   {
+    "w": "KitBridge",
+    "t": 0.65
+   },
+   {
+    "w": "solves",
+    "t": 1.103
+   },
+   {
+    "w": "a",
+    "t": 1.416
+   },
+   {
+    "w": "two",
+    "t": 1.509
+   },
+   {
+    "w": "step",
+    "t": 1.718
+   },
+   {
+    "w": "integer",
+    "t": 1.974
+   },
+   {
+    "w": "program",
+    "t": 2.345
+   },
+   {
+    "w": "with",
+    "t": 3.088
+   },
+   {
+    "w": "the",
+    "t": 3.286
+   },
+   {
+    "w": "HiGHS",
+    "t": 3.402
+   },
+   {
+    "w": "solver,",
+    "t": 3.68
+   },
+   {
+    "w": "compiled",
+    "t": 4.481
+   },
+   {
+    "w": "to",
+    "t": 4.923
+   },
+   {
+    "w": "WebAssembly",
+    "t": 5.085
+   },
+   {
+    "w": "and",
+    "t": 5.828
+   },
+   {
+    "w": "running",
+    "t": 6.118
+   },
+   {
+    "w": "in",
+    "t": 6.42
+   },
+   {
+    "w": "a",
+    "t": 6.513
+   },
+   {
+    "w": "web",
+    "t": 6.594
+   },
+   {
+    "w": "worker.",
+    "t": 6.769
+   }
+  ]
+ },
+ {
+  "scene": "how",
+  "id": "L15",
+  "text": "Step one finds the most complete kits within stock, budget and promises. Step two finds the cheapest purchase that reaches that total.",
+  "seconds": 7.525,
+  "words": [
+   {
+    "w": "Step",
+    "t": 0.0
+   },
+   {
+    "w": "one",
+    "t": 0.337
+   },
+   {
+    "w": "finds",
+    "t": 0.522
+   },
+   {
+    "w": "the",
+    "t": 0.824
+   },
+   {
+    "w": "most",
+    "t": 0.929
+   },
+   {
+    "w": "complete",
+    "t": 1.126
+   },
+   {
+    "w": "kits",
+    "t": 1.544
+   },
+   {
+    "w": "within",
+    "t": 1.811
+   },
+   {
+    "w": "stock,",
+    "t": 2.101
+   },
+   {
+    "w": "budget",
+    "t": 2.531
+   },
+   {
+    "w": "and",
+    "t": 2.879
+   },
+   {
+    "w": "promises.",
+    "t": 3.03
+   },
+   {
+    "w": "Step",
+    "t": 4.168
+   },
+   {
+    "w": "two",
+    "t": 4.447
+   },
+   {
+    "w": "finds",
+    "t": 5.085
+   },
+   {
+    "w": "the",
+    "t": 5.375
+   },
+   {
+    "w": "cheapest",
+    "t": 5.503
+   },
+   {
+    "w": "purchase",
+    "t": 5.921
+   },
+   {
+    "w": "that",
+    "t": 6.339
+   },
+   {
+    "w": "reaches",
+    "t": 6.513
+   },
+   {
+    "w": "that",
+    "t": 6.85
+   },
+   {
+    "w": "total.",
+    "t": 7.07
+   }
+  ]
+ },
+ {
+  "scene": "how",
+  "id": "L16",
+  "text": "Money is counted in whole cents, the solver is checked against brute force on ninety six small drives, and nothing ever leaves your device.",
+  "seconds": 7.899,
+  "words": [
+   {
+    "w": "Money",
+    "t": 0.0
+   },
+   {
+    "w": "is",
+    "t": 0.279
+   },
+   {
+    "w": "counted",
+    "t": 0.406
+   },
+   {
+    "w": "in",
+    "t": 0.72
+   },
+   {
+    "w": "whole",
+    "t": 0.848
+   },
+   {
+    "w": "cents,",
+    "t": 1.115
+   },
+   {
+    "w": "the",
+    "t": 1.916
+   },
+   {
+    "w": "solver",
+    "t": 2.078
+   },
+   {
+    "w": "is",
+    "t": 2.473
+   },
+   {
+    "w": "checked",
+    "t": 2.601
+   },
+   {
+    "w": "against",
+    "t": 2.891
+   },
+   {
+    "w": "brute",
+    "t": 3.193
+   },
+   {
+    "w": "force",
+    "t": 3.483
+   },
+   {
+    "w": "on",
+    "t": 3.808
+   },
+   {
+    "w": "ninety",
+    "t": 4.017
+   },
+   {
+    "w": "six",
+    "t": 4.435
+   },
+   {
+    "w": "small",
+    "t": 4.702
+   },
+   {
+    "w": "drives,",
+    "t": 5.027
+   },
+   {
+    "w": "and",
+    "t": 5.921
+   },
+   {
+    "w": "nothing",
+    "t": 6.223
+   },
+   {
+    "w": "ever",
+    "t": 6.687
+   },
+   {
+    "w": "leaves",
+    "t": 6.931
+   },
+   {
+    "w": "your",
+    "t": 7.198
+   },
+   {
+    "w": "device.",
+    "t": 7.349
+   }
+  ]
+ },
+ {
+  "scene": "close",
+  "id": "L17",
+  "text": "Equal access to education starts with a complete kit.",
+  "seconds": 2.685,
+  "words": [
+   {
+    "w": "Equal",
+    "t": 0.0
+   },
+   {
+    "w": "access",
+    "t": 0.372
+   },
+   {
+    "w": "to",
+    "t": 0.685
+   },
+   {
+    "w": "education",
+    "t": 0.789
+   },
+   {
+    "w": "starts",
+    "t": 1.312
+   },
+   {
+    "w": "with",
+    "t": 1.591
+   },
+   {
+    "w": "a",
+    "t": 1.753
+   },
+   {
+    "w": "complete",
+    "t": 1.846
+   },
+   {
+    "w": "kit.",
+    "t": 2.287
+   }
+  ]
+ },
+ {
+  "scene": "close",
+  "id": "L18",
+  "text": "KitBridge. From donated supplies, to complete kits.",
+  "seconds": 3.304,
+  "words": [
+   {
+    "w": "KitBridge.",
+    "t": 0.0
+   },
+   {
+    "w": "From",
+    "t": 1.08
+   },
+   {
+    "w": "donated",
+    "t": 1.324
+   },
+   {
+    "w": "supplies,",
+    "t": 1.741
+   },
+   {
+    "w": "to",
+    "t": 2.252
+   },
+   {
+    "w": "complete",
+    "t": 2.415
+   },
+   {
+    "w": "kits.",
+    "t": 2.821
+   }
+  ]
+ }
+]

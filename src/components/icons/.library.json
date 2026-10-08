@@ -1,0 +1,15 @@
+{
+  "library": "iconoir",
+  "prefix": "iconoir",
+  "source": "iconify",
+  "installedAt": "2026-09-25T06:45:24.585Z",
+  "icons": [
+    "arrow-left",
+    "arrow-right",
+    "box",
+    "cart",
+    "nav-arrow-down",
+    "plus",
+    "xmark"
+  ]
+}

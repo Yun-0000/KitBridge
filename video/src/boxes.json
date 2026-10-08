@@ -1,0 +1,192 @@
+{
+ "page:plan": {
+  "width": 1440,
+  "height": 996
+ },
+ "band": {
+  "x": 128,
+  "y": 76,
+  "width": 1184,
+  "height": 276.6875
+ },
+ "numbers": {
+  "x": 160,
+  "y": 129,
+  "width": 771.75,
+  "height": 83.59375
+ },
+ "sentence": {
+  "x": 160,
+  "y": 230.59375,
+  "width": 720,
+  "height": 26.09375
+ },
+ "mark": {
+  "x": 478.84375,
+  "y": 231.59375,
+  "width": 350.3125,
+  "height": 23
+ },
+ "kits": {
+  "x": 979.75,
+  "y": 232.6875,
+  "width": 300.25,
+  "height": 90
+ },
+ "openPacking": {
+  "x": 160,
+  "y": 278.6875,
+  "width": 210.59375,
+  "height": 44
+ },
+ "sheet": {
+  "x": 128,
+  "y": 372.6875,
+  "width": 1184,
+  "height": 559
+ },
+ "budget": {
+  "x": 1163,
+  "y": 407.6875,
+  "width": 124,
+  "height": 44
+ },
+ "notebookRow": {
+  "x": 147,
+  "y": 639.1875,
+  "width": 83.625,
+  "height": 38
+ },
+ "notebookTag": {
+  "x": 238.625,
+  "y": 647.9375,
+  "width": 59.546875,
+  "height": 20.5
+ },
+ "buyChip": {
+  "x": 1077,
+  "y": 643.4375,
+  "width": 111.296875,
+  "height": 29.5
+ },
+ "backpack": {
+  "x": 333,
+  "y": 583.1875,
+  "width": 96,
+  "height": 38
+ },
+ "kitHeads": {
+  "x": 439,
+  "y": 491.6875,
+  "width": 195,
+  "height": 83
+ },
+ "restockGroup": {
+  "x": 849,
+  "y": 465.6875,
+  "width": 384,
+  "height": 26
+ },
+ "page:budget-focus": {
+  "width": 1440,
+  "height": 996
+ },
+ "page:budget-typing": {
+  "width": 1440,
+  "height": 1022
+ },
+ "page:budget-4": {
+  "width": 1440,
+  "height": 1022
+ },
+ "page:backpack-focus": {
+  "width": 1440,
+  "height": 996
+ },
+ "page:backpack-typing": {
+  "width": 1440,
+  "height": 900
+ },
+ "page:backpack-7": {
+  "width": 1440,
+  "height": 900
+ },
+ "page:plan-back": {
+  "width": 1440,
+  "height": 996
+ },
+ "page:pack-now": {
+  "width": 1440,
+  "height": 900
+ },
+ "afterTab": {
+  "x": 1164.0625,
+  "y": 136,
+  "width": 143.9375,
+  "height": 44
+ },
+ "page:pack-after": {
+  "width": 1440,
+  "height": 900
+ },
+ "buyFirst": {
+  "x": 128,
+  "y": 206,
+  "width": 1184,
+  "height": 77
+ },
+ "packGrid": {
+  "x": 128,
+  "y": 303,
+  "width": 1184,
+  "height": 348.890625
+ },
+ "printBtn": {
+  "x": 1201.8125,
+  "y": 76,
+  "width": 110.1875,
+  "height": 44
+ },
+ "page:pack-check-1": {
+  "width": 1440,
+  "height": 900
+ },
+ "page:pack-check-2": {
+  "width": 1440,
+  "height": 900
+ },
+ "page:pack-check-3": {
+  "width": 1440,
+  "height": 900
+ },
+ "firstCard": {
+  "x": 128,
+  "y": 303,
+  "width": 582,
+  "height": 348.890625
+ },
+ "check1": {
+  "x": 153,
+  "y": 433.390625,
+  "width": 22,
+  "height": 22
+ },
+ "check2": {
+  "x": 153,
+  "y": 489.390625,
+  "width": 22,
+  "height": 22
+ },
+ "check3": {
+  "x": 153,
+  "y": 545.390625,
+  "width": 22,
+  "height": 22
+ },
+ "phoneSheet": {
+  "x": 12,
+  "y": 533.375,
+  "width": 366,
+  "height": 654
+ }
+}

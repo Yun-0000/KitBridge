@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-inverted: var(--ring-inverted);
+  --font-sans: var(--font-sans);
+}
+
+:root {
+  --background: #fafaf7;
+  --foreground: #141414;
+  --card: #ffffff;
+  --card-foreground: var(--foreground);
+  --popover: #ffffff;
+  --popover-foreground: var(--foreground);
+  --primary: #141414;
+  --primary-foreground: #ffffff;
+  --secondary: #f1f0ec;
+  --secondary-foreground: #3b3a36;
+  --muted: var(--secondary);
+  --muted-foreground: #63615b;
+  --accent: #fff3c4;
+  --accent-foreground: #141414;
+  --destructive: #b3261e;
+  --destructive-foreground: #ffffff;
+  --border: #e6e4de;
+  --input: #ffffff;
+  --ring: #141414;
+  --ring-inverted: #ffc93c;
+
+  /* KitBridge: ink = packable now, school-bus yellow = after restock. */
+  --brand: #ffc93c;
+  --line-soft: #efede8;
+  --ink-2: #2c2b28;
+  --ink-muted: #b9b7b0;
+
+  --radius: 0.625rem;
+  --font-sans: "Schibsted Grotesk", -apple-system, BlinkMacSystemFont, ui-sans-serif, system-ui, "Segoe UI", sans-serif;
+  --font-display: "Bricolage Grotesque", var(--font-sans);
+
+  --shadow-float: 0 18px 40px -20px rgb(20 20 20 / 0.45);
+  --shadow-cap: 0 1px 2px rgb(20 20 20 / 0.08);
+  --shadow-thumb: 0 1px 2px rgb(20 20 20 / 0.28);
+  --shadow-focus-lift: 0 1px 2px rgb(20 20 20 / 0.08), 0 10px 20px -14px rgb(20 20 20 / 0.5);
+}
