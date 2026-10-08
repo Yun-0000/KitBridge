@@ -8,7 +8,7 @@ Know how many kits you can pack right now, and what to buy next.</p>
 
 <p align="center">
   <a href="https://kitbridge-sigma.vercel.app"><img src="https://img.shields.io/badge/Open_planner-FFC93C?style=for-the-badge&logoColor=141414&labelColor=FFC93C&color=FFC93C" alt="Open planner" /></a>
-  <a href="https://kitbridge-sigma.vercel.app/demo/"><img src="https://img.shields.io/badge/%E2%96%B6_Watch_the_demo-1%3A55-141414?style=for-the-badge&labelColor=141414&color=2C2B28" alt="Watch the 1:55 demo" /></a>
+  <a href="https://kitbridge-sigma.vercel.app/demo/"><img src="https://img.shields.io/badge/%E2%96%B6_Watch_the_demo-2%3A06-141414?style=for-the-badge&labelColor=141414&color=2C2B28" alt="Watch the 2:06 demo" /></a>
 </p>
 
 <p align="center">
@@ -23,7 +23,7 @@ Know how many kits you can pack right now, and what to buy next.</p>
     <img src="public/demo/poster.jpg" alt="KitBridge demo film: 8 kits from stock, 12 after a $5 notebook pack" width="860" />
   </a>
   <br />
-  <sub>▶ <a href="https://kitbridge-sigma.vercel.app/demo/">Watch the narrated demo</a> (1:55, captions on screen)</sub>
+  <sub>▶ <a href="https://kitbridge-sigma.vercel.app/demo/">Watch the narrated demo</a> (2:06, captions on screen) · also on <a href="https://youtu.be/Ypg-yjubl4g">YouTube</a></sub>
 </p>
 
 ## The problem
@@ -86,7 +86,7 @@ npm run dev
 | `npm run build` | Create the production build. |
 | `npm run preview` | Preview that build locally. |
 
-The demo film is made with [Remotion](https://www.remotion.dev) from screenshots of the real app. See [`video/`](video/README.md).
+The demo film is made with AI and [Remotion](https://www.remotion.dev): the narration, music and sound effects are AI-generated, and every scene is built from screenshots of the real app. See [`video/`](video/README.md).
 
 ## License
 
