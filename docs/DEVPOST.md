@@ -50,7 +50,7 @@ Try KitBridge with a volunteer packing team and their inventory. Check whether t
 
 ## Demo video
 
-https://youtu.be/w5kkK80ByeI
+https://youtu.be/Ypg-yjubl4g
 
 A two-minute walkthrough of the real app, with captions. It is also on the site at https://kitbridge-sigma.vercel.app/demo/, and the source is in `video/`.
 
