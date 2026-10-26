@@ -134,7 +134,7 @@ export function runTwoPhase(highs: Highs, request: SolveRequest): SolveOutcome {
     return emptyOutcome(
       request,
       "Timeout",
-      "Solve exceeded the 2s wall-clock limit.",
+      `Solve exceeded the ${request.remainingMs / 1000}s wall-clock limit.`,
       phase1.status === "Timeout"
         ? phase1
         : {

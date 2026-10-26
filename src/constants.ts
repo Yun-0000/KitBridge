@@ -6,7 +6,6 @@ export const CAPS = {
   maxStock: 10_000,
   maxRecipeQty: 100,
   maxBuyPackSize: 500,
-  maxYPacks: 100,
 } as const;
 
 export const SOLVE_TIMEOUT_MS = 2_000;

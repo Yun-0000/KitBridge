@@ -170,7 +170,7 @@ export async function solveScenario(
       readyPromise = null;
       setHealth({ state: "loading" });
       void initSolver();
-      resolve(timeoutOutcome(request, "Solve exceeded the 2s wall-clock limit. The worker was stopped."));
+      resolve(timeoutOutcome(request, `Solve exceeded the ${SOLVE_TIMEOUT_MS / 1000}s wall-clock limit. The worker was stopped.`));
     }, SOLVE_TIMEOUT_MS + 50);
 
     const onMessage = (event: MessageEvent<WorkerOutgoing>) => {

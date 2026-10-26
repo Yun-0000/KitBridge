@@ -107,6 +107,26 @@ describe("buildLp", () => {
     expect(text).toContain("budget:");
     expect(text).toMatch(/\by1\b/);
   });
+
+  it("writes the same LP text for every mode and phase", () => {
+    const example = createExampleScenario();
+    const freeGlue = createItem({ id: "item_glue", name: "Glue", stock: 3, buyPackSize: 4, buyPackPriceCents: 0 });
+    const unused = createItem({ id: "item_tape", name: "Tape", stock: 9, buyPackSize: 2, buyPackPriceCents: 150 });
+    const mixed = {
+      ...example,
+      items: [...example.items, freeGlue, unused],
+      kits: example.kits.map((kit, index) => ({
+        ...kit,
+        recipe: { ...kit.recipe, [freeGlue.id]: index + 1, [unused.id]: 0 },
+      })),
+    };
+    for (const scenario of [example, mixed]) {
+      for (const mode of ["current", "restock"] as const) {
+        expect(buildLp(scenario, mode, "maxKits").text).toMatchSnapshot();
+        expect(buildLp(scenario, mode, "minCost", 12).text).toMatchSnapshot();
+      }
+    }
+  });
 });
 
 describe("conservation helpers", () => {

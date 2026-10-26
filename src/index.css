@@ -166,6 +166,18 @@ button svg {
   border-color: color-mix(in srgb, var(--destructive) 30%, var(--border));
   background: color-mix(in srgb, var(--destructive) 5%, var(--card));
 }
+.banner-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 16px;
+}
+.banner-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
 
 /* ---------- Answer band ---------- */
 
@@ -381,9 +393,7 @@ button svg {
 }
 .sheet-grid {
   display: grid;
-  grid-template-columns:
-    minmax(170px, 1.3fr) 96px repeat(var(--kits), minmax(150px, 200px))
-    96px 112px minmax(140px, 156px) 44px;
+  grid-template-columns: var(--wide);
   column-gap: 10px;
   align-items: center;
 }

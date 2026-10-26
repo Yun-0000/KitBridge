@@ -1,5 +1,4 @@
-import { CAPS } from "../constants";
-import type { Scenario, SolveMode } from "../types";
+import type { Item, Scenario, SolveMode } from "../types";
 import { lpName } from "./ids";
 import { purchasable } from "./scenario";
 
@@ -15,20 +14,19 @@ export interface BuiltLp {
   mapping: LpMapping;
 }
 
-function maxUsefulBuys(scenario: Scenario, itemIndex: number): number {
-  const item = scenario.items[itemIndex];
-  if (!purchasable(item) || item.buyPackSize <= 0) return 0;
+/**
+ * Most packs worth buying: enough to cover every requested kit, and no more
+ * than the budget pays for. Free packs are bounded by need alone.
+ */
+function maxUsefulBuys(scenario: Scenario, item: Item): number {
+  if (!purchasable(item)) return 0;
   let need = 0;
   for (const kit of scenario.kits) {
     need += (kit.recipe[item.id] ?? 0) * kit.demand;
   }
-  const short = Math.max(0, need - item.stock);
-  const byNeed = Math.ceil(short / item.buyPackSize);
-  const byBudget =
-    item.buyPackPriceCents > 0
-      ? Math.floor(scenario.budgetCents / item.buyPackPriceCents)
-      : CAPS.maxYPacks;
-  return Math.max(0, Math.min(CAPS.maxYPacks, byNeed, byBudget));
+  const byNeed = Math.ceil(Math.max(0, need - item.stock) / item.buyPackSize);
+  if (item.buyPackPriceCents === 0) return byNeed;
+  return Math.min(byNeed, Math.floor(scenario.budgetCents / item.buyPackPriceCents));
 }
 
 export function buildLp(
@@ -40,22 +38,21 @@ export function buildLp(
   const kitIds = scenario.kits.map((kit) => kit.id);
   const itemIds = scenario.items.map((item) => item.id);
   const xNames = scenario.kits.map((_, index) => lpName("x", index));
-  const allowBuys = mode === "restock";
   const yNames = scenario.items.map((_, index) => lpName("y", index));
+  // Upper bound on packs bought per item; 0 means the item gets no buy variable.
+  const yMax = scenario.items.map((item) =>
+    mode === "restock" ? maxUsefulBuys(scenario, item) : 0,
+  );
+  const buyable = scenario.items
+    .map((item, index) => ({ item, index, name: yNames[index] }))
+    .filter(({ index }) => yMax[index] > 0);
 
-  const objTerms: string[] = [];
-  if (phase === "maxKits") {
-    for (const name of xNames) objTerms.push(name);
-  } else {
-    if (allowBuys) {
-      scenario.items.forEach((item, index) => {
-        if (purchasable(item) && maxUsefulBuys(scenario, index) > 0) {
-          objTerms.push(`${item.buyPackPriceCents} ${yNames[index]}`);
-        }
-      });
-    }
-    if (objTerms.length === 0) objTerms.push("0 dummy");
-  }
+  const objTerms =
+    phase === "maxKits"
+      ? [...xNames]
+      : buyable.map(({ item, name }) => `${item.buyPackPriceCents} ${name}`);
+  const useDummy = phase === "minCost" && objTerms.length === 0;
+  if (useDummy) objTerms.push("0 dummy");
 
   const constraints: string[] = [];
 
@@ -70,67 +67,27 @@ export function buildLp(
       if (qty > 0) terms.push(`${qty} ${xNames[kitIndex]}`);
     });
     if (terms.length === 0) return;
-    const rhs =
-      allowBuys && purchasable(item) && maxUsefulBuys(scenario, itemIndex) > 0
-        ? `${item.stock} + ${item.buyPackSize} ${yNames[itemIndex]}`
-        : `${item.stock}`;
     // CPLEX LP wants a numeric RHS; encode purchases on the left.
-    if (allowBuys && purchasable(item) && maxUsefulBuys(scenario, itemIndex) > 0) {
-      constraints.push(
-        `  item_${itemIndex}: ${terms.join(" + ")} - ${item.buyPackSize} ${yNames[itemIndex]} <= ${item.stock}`,
-      );
-    } else {
-      void rhs;
-      constraints.push(`  item_${itemIndex}: ${terms.join(" + ")} <= ${item.stock}`);
-    }
+    const buy = yMax[itemIndex] > 0 ? ` - ${item.buyPackSize} ${yNames[itemIndex]}` : "";
+    constraints.push(`  item_${itemIndex}: ${terms.join(" + ")}${buy} <= ${item.stock}`);
   });
 
-  if (allowBuys && phase === "minCost") {
-    const costTerms: string[] = [];
-    scenario.items.forEach((item, index) => {
-      if (purchasable(item) && maxUsefulBuys(scenario, index) > 0 && item.buyPackPriceCents > 0) {
-        costTerms.push(`${item.buyPackPriceCents} ${yNames[index]}`);
-      }
-    });
-    if (costTerms.length > 0) {
-      constraints.push(`  budget: ${costTerms.join(" + ")} <= ${scenario.budgetCents}`);
-    }
-  } else if (allowBuys && phase === "maxKits") {
-    const costTerms: string[] = [];
-    scenario.items.forEach((item, index) => {
-      if (purchasable(item) && maxUsefulBuys(scenario, index) > 0 && item.buyPackPriceCents > 0) {
-        costTerms.push(`${item.buyPackPriceCents} ${yNames[index]}`);
-      }
-    });
-    if (costTerms.length > 0) {
-      constraints.push(`  budget: ${costTerms.join(" + ")} <= ${scenario.budgetCents}`);
-    }
+  const costTerms = buyable
+    .filter(({ item }) => item.buyPackPriceCents > 0)
+    .map(({ item, name }) => `${item.buyPackPriceCents} ${name}`);
+  if (costTerms.length > 0) {
+    constraints.push(`  budget: ${costTerms.join(" + ")} <= ${scenario.budgetCents}`);
   }
 
-  const bounds: string[] = [];
-  scenario.kits.forEach((kit, index) => {
-    bounds.push(`  ${kit.committedMin} <= ${xNames[index]} <= ${kit.demand}`);
-  });
-  if (allowBuys) {
-    scenario.items.forEach((item, index) => {
-      if (purchasable(item) && maxUsefulBuys(scenario, index) > 0) {
-        bounds.push(`  0 <= ${yNames[index]} <= ${maxUsefulBuys(scenario, index)}`);
-      }
-    });
+  const bounds = scenario.kits.map(
+    (kit, index) => `  ${kit.committedMin} <= ${xNames[index]} <= ${kit.demand}`,
+  );
+  for (const { index, name } of buyable) {
+    bounds.push(`  0 <= ${name} <= ${yMax[index]}`);
   }
-  if (phase === "minCost" && objTerms.includes("0 dummy")) {
+  const generals = [...xNames, ...buyable.map(({ name }) => name)];
+  if (useDummy) {
     bounds.push("  dummy = 0");
-  }
-
-  const generals = [...xNames];
-  if (allowBuys) {
-    scenario.items.forEach((item, index) => {
-      if (purchasable(item) && maxUsefulBuys(scenario, index) > 0) {
-        generals.push(yNames[index]);
-      }
-    });
-  }
-  if (phase === "minCost" && objTerms.includes("0 dummy")) {
     generals.push("dummy");
   }
 
@@ -152,8 +109,4 @@ export function buildLp(
     text,
     mapping: { xNames, yNames, kitIds, itemIds },
   };
-}
-
-export function yUpperBound(scenario: Scenario, itemIndex: number): number {
-  return maxUsefulBuys(scenario, itemIndex);
 }

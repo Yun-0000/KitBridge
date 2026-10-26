@@ -41,8 +41,10 @@ export function DriveSheet({ scenario, limiting, buys, onEdit }: SheetProps) {
   const kitLabel = (index: number) => kits[index].name || `Kit ${index + 1}`;
   const itemLabel = (index: number) => items[index].name || `Item ${index + 1}`;
   const on = (group: string) => (group === active ? " is-active" : "");
+  const kitCols = kits.length ? ` repeat(${kits.length}, minmax(150px, 200px))` : "";
   const style = {
     "--kits": kits.length,
+    "--wide": `minmax(170px, 1.3fr) 96px${kitCols} 96px 112px minmax(140px, 156px) 44px`,
     "--narrow":
       active === "restock"
         ? "minmax(0, 1fr) 64px 92px"

@@ -1,0 +1,169 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`buildLp > writes the same LP text for every mode and phase 1`] = `
+"Maximize
+  obj: x0 + x1
+Subject To
+  item_0: 1 x0 + 1 x1 <= 12
+  item_1: 1 x0 + 2 x1 <= 12
+  item_2: 2 x0 + 2 x1 <= 40
+  item_3: 1 x0 <= 8
+  item_4: 1 x1 <= 4
+Bounds
+  4 <= x0 <= 8
+  4 <= x1 <= 8
+Generals
+  x0 x1
+End
+"
+`;
+
+exports[`buildLp > writes the same LP text for every mode and phase 2`] = `
+"Minimize
+  obj: 0 dummy
+Subject To
+  lock_kits: x0 + x1 >= 12
+  item_0: 1 x0 + 1 x1 <= 12
+  item_1: 1 x0 + 2 x1 <= 12
+  item_2: 2 x0 + 2 x1 <= 40
+  item_3: 1 x0 <= 8
+  item_4: 1 x1 <= 4
+Bounds
+  4 <= x0 <= 8
+  4 <= x1 <= 8
+  dummy = 0
+Generals
+  x0 x1 dummy
+End
+"
+`;
+
+exports[`buildLp > writes the same LP text for every mode and phase 3`] = `
+"Maximize
+  obj: x0 + x1
+Subject To
+  item_0: 1 x0 + 1 x1 <= 12
+  item_1: 1 x0 + 2 x1 - 5 y1 <= 12
+  item_2: 2 x0 + 2 x1 <= 40
+  item_3: 1 x0 <= 8
+  item_4: 1 x1 - 1 y4 <= 4
+  budget: 500 y1 + 400 y4 <= 1000
+Bounds
+  4 <= x0 <= 8
+  4 <= x1 <= 8
+  0 <= y1 <= 2
+  0 <= y4 <= 2
+Generals
+  x0 x1 y1 y4
+End
+"
+`;
+
+exports[`buildLp > writes the same LP text for every mode and phase 4`] = `
+"Minimize
+  obj: 500 y1 + 400 y4
+Subject To
+  lock_kits: x0 + x1 >= 12
+  item_0: 1 x0 + 1 x1 <= 12
+  item_1: 1 x0 + 2 x1 - 5 y1 <= 12
+  item_2: 2 x0 + 2 x1 <= 40
+  item_3: 1 x0 <= 8
+  item_4: 1 x1 - 1 y4 <= 4
+  budget: 500 y1 + 400 y4 <= 1000
+Bounds
+  4 <= x0 <= 8
+  4 <= x1 <= 8
+  0 <= y1 <= 2
+  0 <= y4 <= 2
+Generals
+  x0 x1 y1 y4
+End
+"
+`;
+
+exports[`buildLp > writes the same LP text for every mode and phase 5`] = `
+"Maximize
+  obj: x0 + x1
+Subject To
+  item_0: 1 x0 + 1 x1 <= 12
+  item_1: 1 x0 + 2 x1 <= 12
+  item_2: 2 x0 + 2 x1 <= 40
+  item_3: 1 x0 <= 8
+  item_4: 1 x1 <= 4
+  item_5: 1 x0 + 2 x1 <= 3
+Bounds
+  4 <= x0 <= 8
+  4 <= x1 <= 8
+Generals
+  x0 x1
+End
+"
+`;
+
+exports[`buildLp > writes the same LP text for every mode and phase 6`] = `
+"Minimize
+  obj: 0 dummy
+Subject To
+  lock_kits: x0 + x1 >= 12
+  item_0: 1 x0 + 1 x1 <= 12
+  item_1: 1 x0 + 2 x1 <= 12
+  item_2: 2 x0 + 2 x1 <= 40
+  item_3: 1 x0 <= 8
+  item_4: 1 x1 <= 4
+  item_5: 1 x0 + 2 x1 <= 3
+Bounds
+  4 <= x0 <= 8
+  4 <= x1 <= 8
+  dummy = 0
+Generals
+  x0 x1 dummy
+End
+"
+`;
+
+exports[`buildLp > writes the same LP text for every mode and phase 7`] = `
+"Maximize
+  obj: x0 + x1
+Subject To
+  item_0: 1 x0 + 1 x1 <= 12
+  item_1: 1 x0 + 2 x1 - 5 y1 <= 12
+  item_2: 2 x0 + 2 x1 <= 40
+  item_3: 1 x0 <= 8
+  item_4: 1 x1 - 1 y4 <= 4
+  item_5: 1 x0 + 2 x1 - 4 y5 <= 3
+  budget: 500 y1 + 400 y4 <= 1000
+Bounds
+  4 <= x0 <= 8
+  4 <= x1 <= 8
+  0 <= y1 <= 2
+  0 <= y4 <= 2
+  0 <= y5 <= 6
+Generals
+  x0 x1 y1 y4 y5
+End
+"
+`;
+
+exports[`buildLp > writes the same LP text for every mode and phase 8`] = `
+"Minimize
+  obj: 500 y1 + 400 y4 + 0 y5
+Subject To
+  lock_kits: x0 + x1 >= 12
+  item_0: 1 x0 + 1 x1 <= 12
+  item_1: 1 x0 + 2 x1 - 5 y1 <= 12
+  item_2: 2 x0 + 2 x1 <= 40
+  item_3: 1 x0 <= 8
+  item_4: 1 x1 - 1 y4 <= 4
+  item_5: 1 x0 + 2 x1 - 4 y5 <= 3
+  budget: 500 y1 + 400 y4 <= 1000
+Bounds
+  4 <= x0 <= 8
+  4 <= x1 <= 8
+  0 <= y1 <= 2
+  0 <= y4 <= 2
+  0 <= y5 <= 6
+Generals
+  x0 x1 y1 y4 y5
+End
+"
+`;

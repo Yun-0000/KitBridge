@@ -17,7 +17,12 @@ import { downloadText, exportScenarioJson, parseScenarioJson } from "./model/io"
 import { newId } from "./model/ids";
 import { limitingItems, purchasesFor } from "./model/insights";
 import { createBlankScenario } from "./model/scenario";
-import { loadStoredScenario, saveScenario } from "./model/storage";
+import {
+  clearUnreadableDrive,
+  loadStoredScenario,
+  loadUnreadableDrive,
+  saveScenario,
+} from "./model/storage";
 import { describeIssues, validateScenario } from "./model/validate";
 import {
   getSolverHealth,
@@ -47,6 +52,8 @@ export function App() {
   const [solved, setSolved] = useState<Solved | null>(null);
   const [saved, setSaved] = useState(true);
   const [message, setMessage] = useState<{ tone: "info" | "error"; text: string } | null>(null);
+  // Read after the scenario initializer, which is what files an unreadable drive.
+  const [unreadable, setUnreadable] = useState<string | null>(loadUnreadableDrive);
   const importRef = useRef<HTMLInputElement>(null);
   const latestSolve = useRef(0);
 
@@ -209,6 +216,34 @@ export function App() {
         {!saved ? (
           <div className="banner error" role="alert">
             This browser could not save your drive. Use Drive → Download backup before closing.
+          </div>
+        ) : null}
+        {unreadable !== null ? (
+          <div className="banner error banner-actions" role="alert">
+            <span>
+              The drive saved in this browser could not be opened, so the sample drive is shown.
+              Download the saved copy to keep it.
+            </span>
+            <span className="banner-buttons">
+              <Button
+                variant="secondary"
+                onClick={() =>
+                  downloadText("kitbridge-unreadable-drive.json", unreadable, "application/json")
+                }
+              >
+                Download saved copy
+              </Button>
+              <Button
+                variant="secondary"
+                onClick={() => {
+                  if (!window.confirm("Delete the saved copy? It cannot be recovered.")) return;
+                  clearUnreadableDrive();
+                  setUnreadable(null);
+                }}
+              >
+                Delete it
+              </Button>
+            </span>
           </div>
         ) : null}
         {message ? (

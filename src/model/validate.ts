@@ -1,5 +1,6 @@
 import { CAPS, SCHEMA_VERSION } from "../constants";
 import type { Item, Kit, Scenario, ValidationIssue } from "../types";
+import { formatUsd } from "./money";
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
@@ -178,7 +179,7 @@ export function validateScenario(
   ) {
     issues.push({
       path: "budgetCents",
-      message: `Budget must be an integer from 0 to ${CAPS.maxBudgetCents} cents ($1000.00).`,
+      message: `Budget must be an integer from 0 to ${CAPS.maxBudgetCents} cents (${formatUsd(CAPS.maxBudgetCents)}).`,
     });
   }
   if (value.label !== null && typeof value.label !== "string") {

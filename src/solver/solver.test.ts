@@ -269,3 +269,33 @@ describe("judge regressions", () => {
         }
   });
 });
+
+describe("large restocks", () => {
+  function oneItemDrive(priceCents: number): Scenario {
+    return {
+      version: 1,
+      label: null,
+      budgetCents: 100_000,
+      items: [{ id: "item_glue", name: "Glue stick", stock: 0, buyPackSize: 1, buyPackPriceCents: priceCents }],
+      kits: [{ id: "kit_a", name: "Kit A", demand: 100, committedMin: 0, recipe: { item_glue: 2 } }],
+    };
+  }
+
+  it("buys more than 100 packs of one item when the budget allows", () => {
+    const scenario = oneItemDrive(50);
+    const plan = solve(scenario, "restock");
+    expect(plan.overallStatus).toBe("Optimal");
+    expect(plan.kits.kit_a).toBe(100);
+    expect(plan.buys.item_glue).toBe(200);
+    expect(plan.costCents).toBe(10_000);
+    expect(inventoryHolds(scenario, plan.kits, plan.buys)).toBe(true);
+  });
+
+  it("buys more than 100 free packs when the kits need them", () => {
+    const plan = solve(oneItemDrive(0), "restock");
+    expect(plan.overallStatus).toBe("Optimal");
+    expect(plan.kits.kit_a).toBe(100);
+    expect(plan.buys.item_glue).toBe(200);
+    expect(plan.costCents).toBe(0);
+  });
+});
