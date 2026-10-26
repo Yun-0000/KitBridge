@@ -18,9 +18,9 @@ import { newId } from "./model/ids";
 import { limitingItems, purchasesFor } from "./model/insights";
 import { createBlankScenario } from "./model/scenario";
 import {
-  clearUnreadableDrive,
-  loadStoredScenario,
-  loadUnreadableDrive,
+  clearUnreadableDrives,
+  loadStoredDrive,
+  loadUnreadableDrives,
   saveScenario,
 } from "./model/storage";
 import { describeIssues, validateScenario } from "./model/validate";
@@ -45,15 +45,22 @@ const SOLVE_DELAY_MS = 250;
 
 export function App() {
   const [view, setView] = useState<"plan" | "packing">("plan");
-  const [scenario, setScenario] = useState<Scenario>(
-    () => loadStoredScenario() ?? createExampleScenario(),
-  );
+  const [boot] = useState(() => {
+    const stored = loadStoredDrive();
+    return { ...stored, start: stored.scenario ?? createExampleScenario() };
+  });
+  const [scenario, setScenario] = useState<Scenario>(boot.start);
   const [health, setHealth] = useState<SolverHealth>(getSolverHealth);
   const [solved, setSolved] = useState<Solved | null>(null);
   const [saved, setSaved] = useState(true);
   const [message, setMessage] = useState<{ tone: "info" | "error"; text: string } | null>(null);
-  // Read after the scenario initializer, which is what files an unreadable drive.
-  const [unreadable, setUnreadable] = useState<string | null>(loadUnreadableDrive);
+  const [copies, setCopies] = useState<string[]>(() => {
+    const kept = loadUnreadableDrives();
+    return boot.unreadable === null || kept.includes(boot.unreadable)
+      ? kept
+      : [...kept, boot.unreadable];
+  });
+  const [copiesHidden, setCopiesHidden] = useState(false);
   const importRef = useRef<HTMLInputElement>(null);
   const latestSolve = useRef(0);
 
@@ -218,30 +225,47 @@ export function App() {
             This browser could not save your drive. Use Drive → Download backup before closing.
           </div>
         ) : null}
-        {unreadable !== null ? (
+        {copies.length && !copiesHidden ? (
           <div className="banner error banner-actions" role="alert">
             <span>
-              The drive saved in this browser could not be opened, so the sample drive is shown.
-              Download the saved copy to keep it.
+              {boot.unreadable !== null && scenario === boot.start
+                ? "The drive saved in this browser could not be opened, so the sample drive is shown. "
+                : copies.length === 1
+                  ? "A drive this browser could not open is still kept here. "
+                  : `${copies.length} drives this browser could not open are still kept here. `}
+              {boot.unreadable !== null && !boot.kept
+                ? "This browser could not keep a copy, so download it before you close this page."
+                : "Download a copy to keep it."}
             </span>
             <span className="banner-buttons">
-              <Button
-                variant="secondary"
-                onClick={() =>
-                  downloadText("kitbridge-unreadable-drive.json", unreadable, "application/json")
-                }
-              >
-                Download saved copy
-              </Button>
+              {copies.map((copy, index) => (
+                <Button
+                  key={index}
+                  variant="secondary"
+                  onClick={() =>
+                    downloadText(
+                      `kitbridge-unreadable-drive${copies.length > 1 ? `-${index + 1}` : ""}.json`,
+                      copy,
+                      "application/json",
+                    )
+                  }
+                >
+                  {copies.length > 1 ? `Download copy ${index + 1}` : "Download saved copy"}
+                </Button>
+              ))}
               <Button
                 variant="secondary"
                 onClick={() => {
-                  if (!window.confirm("Delete the saved copy? It cannot be recovered.")) return;
-                  clearUnreadableDrive();
-                  setUnreadable(null);
+                  const what = copies.length > 1 ? "these saved copies" : "the saved copy";
+                  if (!window.confirm(`Delete ${what}? This cannot be undone.`)) return;
+                  clearUnreadableDrives();
+                  setCopies([]);
                 }}
               >
-                Delete it
+                Delete
+              </Button>
+              <Button variant="secondary" onClick={() => setCopiesHidden(true)}>
+                Hide
               </Button>
             </span>
           </div>

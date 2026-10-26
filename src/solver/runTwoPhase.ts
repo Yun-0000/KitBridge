@@ -8,6 +8,7 @@ import {
   kitCountsFromColumns,
   purchaseCostCents,
   remainderFor,
+  trimBuys,
   unmetFor,
 } from "../model/interpret";
 import { validateScenario, formatIssues } from "../model/validate";
@@ -223,13 +224,12 @@ export function runTwoPhase(highs: Highs, request: SolveRequest): SolveOutcome {
     phase2Lp.mapping.xNames,
     phase2Lp.mapping.kitIds,
   );
-  const buys = buyCountsFromColumns(
-    raw2.Columns,
-    phase2Lp.mapping.yNames,
-    phase2Lp.mapping.itemIds,
-    includeBuys,
-  );
   const consumption = consumptionFor(scenario, kits);
+  const buys = trimBuys(
+    scenario,
+    consumption,
+    buyCountsFromColumns(raw2.Columns, phase2Lp.mapping.yNames, phase2Lp.mapping.itemIds, includeBuys),
+  );
   const remainder = remainderFor(scenario, consumption, buys);
   const costCents = purchaseCostCents(scenario, buys);
 

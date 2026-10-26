@@ -298,4 +298,26 @@ describe("large restocks", () => {
     expect(plan.buys.item_glue).toBe(200);
     expect(plan.costCents).toBe(0);
   });
+
+  it("buys only the free packs the planned kits use", () => {
+    const scenario: Scenario = {
+      version: 1,
+      label: null,
+      budgetCents: 0,
+      items: [
+        { id: "item_glue", name: "Glue stick", stock: 0, buyPackSize: 1, buyPackPriceCents: 0 },
+        { id: "item_binder", name: "Binder", stock: 3, buyPackSize: 0, buyPackPriceCents: 0 },
+      ],
+      kits: [
+        { id: "kit_a", name: "Kit A", demand: 50, committedMin: 0, recipe: { item_glue: 100, item_binder: 1 } },
+        { id: "kit_b", name: "Kit B", demand: 50, committedMin: 0, recipe: { item_glue: 1, item_binder: 0 } },
+      ],
+    };
+    const plan = solve(scenario, "restock");
+    expect(plan.overallStatus).toBe("Optimal");
+    expect(plan.kits).toEqual({ kit_a: 3, kit_b: 50 });
+    expect(plan.buys.item_glue).toBe(350);
+    expect(plan.remainder.item_glue).toBe(0);
+    expect(inventoryHolds(scenario, plan.kits, plan.buys)).toBe(true);
+  });
 });

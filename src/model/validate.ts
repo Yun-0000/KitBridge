@@ -66,6 +66,7 @@ function checkKit(
   index: number,
   itemIds: Set<string>,
   issues: ValidationIssue[],
+  allowDraft: boolean,
 ): kit is Kit {
   if (!isRecord(kit)) {
     issues.push({ path: `kits[${index}]`, message: "Kit must be an object." });
@@ -97,6 +98,7 @@ function checkKit(
     });
   }
   if (
+    !allowDraft &&
     nonNegInt(kit.demand) &&
     nonNegInt(kit.committedMin) &&
     kit.committedMin > kit.demand
@@ -133,6 +135,11 @@ function checkKit(
   );
 }
 
+/**
+ * With allowDraft, accept every state the editor can save (no items or kits,
+ * empty recipes, promises above requests, too many requested kits) so saved
+ * drives and backups always reopen. The planner validates strictly.
+ */
 export function validateScenario(
   value: unknown,
   allowDraft = false,
@@ -206,7 +213,7 @@ export function validateScenario(
   const kitIds = new Set<string>();
   let demandSum = 0;
   for (const [index, kit] of value.kits.entries()) {
-    if (checkKit(kit, index, itemIds, issues) && isRecord(kit)) {
+    if (checkKit(kit, index, itemIds, issues, allowDraft) && isRecord(kit)) {
       if (typeof kit.id === "string") {
         if (kitIds.has(kit.id)) {
           issues.push({
@@ -231,7 +238,7 @@ export function validateScenario(
       }
     }
   }
-  if (demandSum > CAPS.maxDemandPacks) {
+  if (!allowDraft && demandSum > CAPS.maxDemandPacks) {
     issues.push({
       path: "kits",
       message: `Total demand cannot exceed ${CAPS.maxDemandPacks} packs.`,

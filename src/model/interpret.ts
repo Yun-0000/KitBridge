@@ -52,6 +52,25 @@ export function consumptionFor(
   return consumption;
 }
 
+/**
+ * Free packs cost nothing, so the min-cost phase may return any number of
+ * them. Keep only the packs the planned kits actually use.
+ */
+export function trimBuys(
+  scenario: Scenario,
+  consumption: Record<ItemId, number>,
+  buys: Record<ItemId, number>,
+): Record<ItemId, number> {
+  const trimmed: Record<ItemId, number> = {};
+  for (const item of scenario.items) {
+    const bought = buys[item.id] ?? 0;
+    const short = Math.max(0, (consumption[item.id] ?? 0) - item.stock);
+    trimmed[item.id] =
+      item.buyPackSize > 0 ? Math.min(bought, Math.ceil(short / item.buyPackSize)) : bought;
+  }
+  return trimmed;
+}
+
 export function remainderFor(
   scenario: Scenario,
   consumption: Record<ItemId, number>,
